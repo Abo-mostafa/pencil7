@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildings>
+
+    <building file="B.xml" name="المبنى A" />
+    <building file="C.xml" name="المبنى B" />
+    
+</buildings>

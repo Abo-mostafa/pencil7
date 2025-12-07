@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building>
+  <name>A</name>
+  <floors>4</floors>
+  <color>#abcce2</color>
+  <floorsData>
+    <floor number="1">
+    </floor>
+    <floor number="2">
+    </floor>
+    <floor number="3">
+    </floor>
+    <floor number="4">
+    <room type="classroom" capacity="20">1/5</room>
+    </floor>
+  </floorsData>
+</building>

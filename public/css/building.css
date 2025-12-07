@@ -1,0 +1,182 @@
+/* السقف */
+/* .building-roof {
+            width: 0;
+            height: 0;
+            border-left: 75px solid transparent;
+            border-right: 75px solid transparent;
+            border-bottom: 40px solid #40739e;
+            margin: 0 auto 5px auto;
+        } */
+
+
+.buildings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.building-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+.building-container:hover {
+    transform: translateY(-5px);
+}
+
+.building-roof {
+    width: 180px;
+    height: 30px;
+    background-color: #1b6305;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: -5px;
+    z-index: 2;
+    position: relative;
+}
+
+.building-body {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-bottom: none;
+}
+
+.building-floor {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.building-floor:hover {
+    background-color: #f8f9fa;
+}
+
+.building-floor.active {
+    background-color: #e3f2fd;
+    border: 2px solid #2196f3;
+}
+
+.building-floor:last-child {
+    border-bottom: none;
+}
+
+.floor-info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.floor-info.active {
+    display: block;
+}
+
+.room-item {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.room-item:hover {
+    background-color: #f0f0f0;
+}
+
+.building-base {
+    width: 180px;
+    height: 40px;
+    background-color: #654321;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.building-base img {
+    width: 60px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.building-name {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #2c3e50;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.no-buildings {
+    text-align: center;
+    color: #7f8c8d;
+    margin: 20px 0;
+}
+
+.floor-details {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.floor-details.active {
+    display: block;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.room-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.room-card:hover {
+    background-color: #f0f8ff;
+    transform: translateY(-2px);
+}

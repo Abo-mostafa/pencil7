@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<building>
+  <name>B</name>
+  <floors>5</floors>
+  <color>#abcce2</color>
+  <floorsData>
+    <floor number="1">
+    </floor>
+    <floor number="2">
+    </floor>
+    <floor number="3">
+    </floor>
+    <floor number="4">
+    </floor>
+    <floor number="5">
+      <room type="classroom" capacity="20">1/5</room>
+    </floor>
+  </floorsData>
+</building>
