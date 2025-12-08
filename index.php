@@ -49,6 +49,8 @@ $jsPath  = 'public/js/main.js';
             <div class="p-t2">
                 <a   href="pages/login.php"><button class="btn p-r2">تسجيل دخول</button></a>
                 <a  href="pages/tables.php"><button class="btn p-r2" >جداول الحصص</button></a>
+                <a  href="pages/tables.php"><button class="btn p-r2" >من نحن </button></a>
+
             </div>
         </div>
 
@@ -60,7 +62,7 @@ $jsPath  = 'public/js/main.js';
     </main>
 
     <footer >
-        <div>© <?= date('Y') ?>smart pencil</div>
+        <div>© <?= date('Y') ?>smart pencil H</div>
         <div style="font-size:12px; color:#666;">جميع الحقوق محفوظة</div>
     </footer>
 

@@ -1,26 +1,30 @@
-name: FTP Deploy
+name: Deploy To Loarwater Server
 
 on:
   push:
     branches:
       - main
+
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v3
 
-    - name: Upload to FTP
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+    - name: Deploy with FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4
       with:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        port: ${{ secrets.FTP_PORT }}
-        protocol: ftps
+        server-dir: /public_html/loarwater.com/
         local-dir: ./
-        server-dir: ${{ secrets.FTP_PATH }}
-        timeout: 300000
 
+        exclude: |
+          conn.php
+          hmb/conn.php
+          **/conn.php
+          .git*
+          .github/
+          node_modules/
+          *.env

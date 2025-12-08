@@ -5,10 +5,15 @@ $dbname = 'pencildb';
 $username = 'root';
 $password = '';
 
+
+// $host = 'localhost';
+// $dbname = 'elias_re1_pencildb';
+// $username = 'elias_re1_hazem';
+// $password = 'Hazem@39016h2';
+
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("فشل الاتصال بقاعدة البيانات: " . $e->getMessage());
+    echo "فشل الاتصال: " . $e->getMessage();
 }
-?>
