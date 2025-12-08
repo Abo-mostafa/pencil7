@@ -1,0 +1,30 @@
+name: Deploy To Loarwater Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Deploy with FTP
+      uses: SamKirkland/FTP-Deploy-Action@v4
+      with:
+        server: ${{ secrets.FTP_HOST }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /public_html/loarwater.com/
+        local-dir: ./
+
+        exclude: |
+          conn.php
+          hmb/conn.php
+          **/conn.php
+          .git*
+          .github/
+          node_modules/
+          *.env
