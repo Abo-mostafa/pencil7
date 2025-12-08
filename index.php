@@ -60,7 +60,7 @@ $jsPath  = 'public/js/main.js';
     </main>
 
     <footer >
-        <div>© <?= date('Y') ?>smart pencil</div>
+        <div>© <?= date('Y') ?>smart pencil H</div>
         <div style="font-size:12px; color:#666;">جميع الحقوق محفوظة</div>
     </footer>
 
