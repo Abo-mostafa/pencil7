@@ -19,7 +19,7 @@ jobs:
           password: Hazem@39016h2
           port: 21
           protocol: ftp
-          server-dir: public_html/loarwater.com/
+          server-dir: /
           local-dir: ./
           exclude: |
             **/conn.php
