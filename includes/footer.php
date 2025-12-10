@@ -11,5 +11,6 @@
 
     <!-- ملفات جافاسكريبت عامة -->
     <script src="../public/js/main.js"></script>
+    <script src="../public/js/pages/chat.js"></script>
 </body>
 </html>
