@@ -54,7 +54,7 @@ $jsPath = '../public/js/main.js';
 
                 <?php if (in_array($user['role'], ['admin', 'moshref', 'modir', 'nazir'])): ?>
                     <a href="../pages/attendance_teachers.php">حضور المدرسين</a>
-                    <a href="../pages/schedule.php">الجدول</a>
+                    <a href="../pages/schaduale.php">الجدول</a>
                 <?php endif; ?>
 
                 <!-- admin فقط له التحكم بالمستخدمين -->

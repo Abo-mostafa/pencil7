@@ -47,7 +47,7 @@ try {
                 ":d"  => $desc
             ]);
 
-            echo json_encode(["status" => "success", "state" => "presence", "teacher_id" => $teacher_id]);
+            echo json_encode(["status" => "success", "state" => "presence", "teacher_id" => $teacher_id,"message" => " 😎تم تسجيل الحضور"]);
             break;
 
 
@@ -94,7 +94,7 @@ try {
                 ":d"  => $desc
             ]);
 
-            echo json_encode(["status" => "success", "state" => "absence", "teacher_id" => $teacher_id]);
+            echo json_encode(["status" => "success", "state" => "absence", "teacher_id" => $teacher_id,"message" => " 😪تم تسجيل الغياب"]);
             break;
 
 

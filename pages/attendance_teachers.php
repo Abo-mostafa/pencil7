@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-
+<script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
 <script src="../public/js/pages/attendance_teachers.js"></script>
 
 <?php include '../includes/footer.php'; ?>

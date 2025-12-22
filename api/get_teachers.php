@@ -57,6 +57,7 @@ foreach ($rows as &$t) {
     }
     else if ($t["absence_description"]) {
         $t["attendance_status"] = "absence";
+        $t["description"] = $t["absence_description"];
     }
     else {
         $t["attendance_status"] = "none";

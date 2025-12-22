@@ -60,9 +60,10 @@ function generateTeacherCardHTML(teacher) {
     let cardBorder = 'border-secondary';
     let badge = `<span class="badge bg-secondary">لم يسجل</span>`;
     let actionButtons = `
-        <button class="btn btn-primary btn-sm" onclick="presence(${id})" > presence </button>
-        <button class="btn btn-secondary btn-sm" onclick="withdrawal(${id})})">انصراف</button>
-        <button class="btn btn-danger btn-sm" onclick="absence(${id})">غياب</button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <button class="btn btn-primary  " onclick="presence(${id})" > تسجيل حضور </button>
+        <button class="btn btn-danger" onclick="absence(${id})">غياب</button>
+    </div>
     `;
 
     let statusDetails = `<p class="text-muted mt-2 mb-1">الحالة: لم يتم تسجيل اليوم</p>`;
@@ -72,7 +73,7 @@ function generateTeacherCardHTML(teacher) {
         badge = `<span class="badge bg-warning text-dark">حضر (لم ينصرف)</span>`;
         actionButtons = `<button class="btn btn-secondary btn-sm" onclick="withdrawal(${id})">انصراف</button>`;
         statusDetails = `<p class="text-warning mt-2 mb-1">
-            حضر الساعة: ${attendanceTime}<br>
+           حضر الساعة: ${formatTime(attendanceTime, 'HH:mm')}<br>
             <small>في انتظار تسجيل الانصراف</small>
         </p>`;
     } else if (status === 'with_leave') {
@@ -84,16 +85,16 @@ function generateTeacherCardHTML(teacher) {
             انصرف الساعة: ${leaveTime}
         </p>`;
     } else if (status === 'absence') {
-        cardBorder = 'border-danger';
+        cardBorder = 'border-danger bg-danger-subtle';
         badge = `<span class="badge bg-danger">غائب</span>`;
         actionButtons = `
+         <div class="d-grid gap-2 d-md-flex justify-content-md-center">
             <button class="btn btn-primary btn-sm" onclick="presence(${id})">حضور</button>
-            <button class="btn btn-secondary btn-sm" onclick="withdrawal(${id})">انصراف</button  
             <button class="btn btn-danger btn-sm" onclick="absence(${id})">غياب</button>
+        </div>
         `;
         statusDetails = `<p class="text-danger mt-2 mb-1">
-            حالة: غياب<br>
-            <small>السبب: ${description || '—'}</small>
+            <small> ${description || '—'}</small>
         </p>`;
     }
 
@@ -102,7 +103,7 @@ function generateTeacherCardHTML(teacher) {
 
     return `
         <div class="col-md-4 mb-4" id="card-${id}">
-            <div class="card h-100 shadow-sm ${cardBorder}">
+            <div class="card h-100 p-3 ${cardBorder} hover-shadow">
                 <div class="card-body text-center">
                     ${badge}
                     <br>
@@ -135,7 +136,7 @@ function updateCard(teacher_id) {
 
 // ======================
 // دوال التعامل مع API
-// ======================
+// ====================== 
 function presence(teacher_id) {
     fetch(`../api/attendance_teachers.php?action=presence`, {
         method: 'POST',
